@@ -1,0 +1,27 @@
+@use 'resources/variables/fonts' as *;
+
+// fonts
+
+@font-face {
+  src: url('@/assets/fonts/Rubik-Regular.ttf') format('truetype');
+  font-family: $font--main;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  src: url('@/assets/fonts/Rubik-Medium.ttf') format('truetype');
+  font-family: $font--main;
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  src: url('@/assets/fonts/Rubik-Bold.ttf') format('truetype');
+  font-family: $font--main;
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}

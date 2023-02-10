@@ -1,0 +1,8 @@
+version: "3.8"
+
+services:
+  app:
+    image: ${APP_IMAGE_PATH}
+    restart: unless-stopped
+    ports:
+      - "${HTTP_PORT}:8080"

@@ -1,0 +1,96 @@
+@use 'resources/variables' as *;
+@use 'resources/mixins' as *;
+
+html, #app, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  font-family: $font--main;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: $color--disabled;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: $color--placeholder-font;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $color--subtitle-font;
+}
+
+.h1, h1 {
+  @include text-h1;
+}
+
+.h2, h2 {
+  @include text-h2;
+}
+
+.h3, h3 {
+  @include text-h3;
+}
+
+.text {
+  @include text-lg;
+
+  &-md {
+    @include text-md;
+  }
+
+  &-sm {
+    @include text-sm;
+  }
+}
+
+.bold {
+  font-weight: 500;
+}
+
+.max-bold {
+  font-weight: 600;
+}
+
+.c-p {
+  cursor: pointer;
+}
+
+// Colors
+@each $_class-name,
+$_color
+in (
+    ('danger', $color--danger),
+    ('success', $color--success),
+    ('primary', $color--primary),
+    ('input-background', $color--input-background),
+    ('disabled', $color--disabled),
+    ('placeholder-font', $color--placeholder-font),
+    ('subtitle-font', $color--subtitle-font),
+    ('table-font', $color--table-font),
+    ('white', $color--white),
+    ('black', $color--black),
+    ('font', $color--font),
+    ('active', $color--active),
+    ('primary-opacity', $color--primary-opacity),
+) {
+  // @sample
+  // .bg-primary
+  // .color-primary
+  @include color($_class-name, $_color);
+}
+
+// Margins | Paddings
+@include sizes-classes;
+
+// Global classes
+@include project-classes;
